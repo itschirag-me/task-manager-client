@@ -20,7 +20,7 @@ const SignUp = () => {
     const { name, gender, contact, address, password } = payload;
     const signupData = await AuthSignUpService({
       name,
-      gender,
+      gender: gender?.value,
       contact,
       address,
       password,
