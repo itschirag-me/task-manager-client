@@ -18,11 +18,14 @@ import Loader from "../common/Loader";
 const Login = () => {
   const { setUserProfile, setIsLoggedIn, handleLogout } = useAuth();
   const [loader, setLoader] = useState(false);
+  const [btnLoader, setBtnLoader] = useState(false);
 
   const handleLogin = async (payload) => {
+    setBtnLoader(true);
     const loginData = await AuthLoginService(payload);
     if (!loginData?.isSuccess) {
       toast.error(loginData?.errorMessage || "Something went wrong");
+      setBtnLoader(false);
       setTimeout(() => setLoader(false), 1000);
       return;
     }
@@ -104,7 +107,9 @@ const Login = () => {
             </div>
 
             <div className="my-4 flex justify-end">
-              <Button type="submit">Submit</Button>
+              <Button isLoading={btnLoader} type="submit">
+                Submit
+              </Button>
             </div>
 
             <span className="text-secondary">

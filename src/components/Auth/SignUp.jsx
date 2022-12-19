@@ -10,7 +10,7 @@ import {
   AuthSignUpService,
 } from "../../services/Auth/AuthService";
 import toast from "react-hot-toast";
-import { capitalize, debounce } from "lodash";
+import { capitalize } from "lodash";
 import Select from "../common/Input/Select";
 
 const SignUp = () => {

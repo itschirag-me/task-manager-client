@@ -1,11 +1,11 @@
 import React from "react";
-import { Circles, CirclesWithBar, FidgetSpinner, MutatingDots, Oval } from "react-loader-spinner";
+import { Oval } from "react-loader-spinner";
 
 const Loader = () => {
   return (
     <Oval
-      height="60"
-      width="60"
+      height="50"
+      width="50"
       color="#FFBE78"
       secondaryColor="#FFBE78"
       radius="12.5"

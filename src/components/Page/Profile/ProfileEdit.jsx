@@ -18,12 +18,12 @@ const ProfileEdit = () => {
       toast.error(userData?.errorMessage);
       return;
     }
-    setUserProfile({ ...userProfile, ...payload });
+    setUserProfile({ ...userProfile, ...payload, gender: payload?.gender?.value });
     toast.success(userData?.message || "Updated successfully");
   };
 
   const formik = useFormik({
-    initialValues: {
+  initialValues: {
       name: userProfile?.name,
       gender: userProfile?.gender
         ? { value: userProfile?.gender, label: userProfile?.gender }

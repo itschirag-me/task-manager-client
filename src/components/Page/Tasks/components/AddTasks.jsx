@@ -3,17 +3,14 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import {
-  UsersAllListService,
-  UsersListService,
-} from "../../../../services/Auth/UserService";
+import { UsersAllListService } from "../../../../services/Auth/UserService";
 import { TaskCreateService } from "../../../../services/TaskService";
 import { TASK_STATUS, TASK_TYPE } from "../../../../utils/constant";
 import Button from "../../../common/Button/Button";
 import FloatingLabel from "../../../common/Input/FloatingLabel";
 import Select from "../../../common/Input/Select";
 
-const AddTasks = ({}) => {
+const AddTasks = ({ ...props }) => {
   const navigator = useNavigate();
 
   const handleSubmitTask = async (values) => {
